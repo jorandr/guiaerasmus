@@ -3,6 +3,6 @@
 # Each service listed will be deployed
 # to power your Platform.sh project.
 
-db:
-    type:mongodb:10.4
+database:
+    type: mongodb
     disk: 2048
