@@ -3,6 +3,3 @@
 # Each service listed will be deployed
 # to power your Platform.sh project.
 
-database:
-    type: mongodb:5.3
-    disk: 2048
