@@ -4,5 +4,5 @@
 # to power your Platform.sh project.
 
 database:
-    type: mongodb
+    type: mongodb:5.3
     disk: 2048
