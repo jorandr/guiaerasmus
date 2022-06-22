@@ -14,7 +14,7 @@ exports.addProduct=function(req,callback){
     objProduct.url=req.body.url;
     objProduct.save(function(err,retorno){
         if (err) callback({codigo:2,texto:err.message});
-        callback({estado:{codigo:1,respuesta:"Proceso exitoso"},product:retorno});
+        callback({product:retorno});
     });
 
 };
