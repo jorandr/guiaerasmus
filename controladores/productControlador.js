@@ -29,7 +29,7 @@ exports.updateProduct=function(req,callback){
 
         productBuscado.save(function(err,resultadoUpdate){
             if (err) callback({codigo:2,texto:err.message});
-            callback({estado:{codigo:1,respuesta:"Proceso exitoso"},product:resultadoUpdate});
+            callback(product:resultadoUpdate});
         });
     });
 };
