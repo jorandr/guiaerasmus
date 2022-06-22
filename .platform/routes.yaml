@@ -11,6 +11,6 @@
     type: redirect
     to: "https://{default}/"
 
-"https://master-7rqtwti-efzbb56aodkle.us-3.platformsh.site":
+"https://{default}":
     type: upstream
     upstream: "app:http"
