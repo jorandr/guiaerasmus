@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 app.use(methodOverride());
 
 //definir puerto de escucha
-app.listen(3001,function(){
+app.listen(3002,function(){
     console.log("Buongiorno, escuchando en puerto 3000");
 });
 
