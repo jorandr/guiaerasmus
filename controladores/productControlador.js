@@ -47,7 +47,7 @@ exports.deleteProduct=function(req,callback){
 exports.findByIdProduct=function(req,callback){
     productModel.findById(req.params.id,function(err,productBuscado){
         if (err) callback({codigo:2,texto:err.message});
-        callback({productBuscado});
+        callback(productBuscado);
     });
 };
 //listar todos los product del contenedor
