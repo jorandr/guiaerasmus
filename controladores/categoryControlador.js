@@ -27,7 +27,7 @@ exports.updateCategory=function(req,callback){
 };
 //eliminar
 exports.deleteCategory=function(req,callback){
-    productCategory.findById(req.params.id,function(err,categoryBuscada){
+    categoryModel.findById(req.params.id,function(err,categoryBuscada){
 
         categoryBuscada.remove(function(err,resultadoUpdate){
             if (err) callback({codigo:2,texto:err.message});
@@ -37,14 +37,14 @@ exports.deleteCategory=function(req,callback){
 };
 //buscar category por id
 exports.findByIdCategory=function(req,callback){
-    productCategory.findById(req.params.id,function(err,categoryBuscada){
+    categoryModel.findById(req.params.id,function(err,categoryBuscada){
         if (err) callback({codigo:2,texto:err.message});
         callback(categoryBuscada);
     });
 };
 //listar todos los product del contenedor
 exports.findAllCategory=function(req,callback){
-    productCategory.find({},function(err,categoriesBuscadas){
+    categoryModel.find({},function(err,categoriesBuscadas){
         if (err) callback({codigo:2,texto:err.message});
         callback(categoriesBuscadas);
     });
