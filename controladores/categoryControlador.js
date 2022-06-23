@@ -43,7 +43,7 @@ exports.findByIdCategory=function(req,callback){
     });
 };
 //listar todos los product del contenedor
-exports.findAllProduct=function(req,callback){
+exports.findAllCategory=function(req,callback){
     productCategory.find({},function(err,categoriesBuscadas){
         if (err) callback({codigo:2,texto:err.message});
         callback(categoriesBuscadas);
