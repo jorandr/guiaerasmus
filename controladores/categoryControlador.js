@@ -17,11 +17,7 @@ exports.addCategory=function(req,callback){
 //actualizar 
 exports.updateCategory=function(req,callback){
     objCategory.findById(req.params.id,function(err,categoryBuscada){
-        categoryBuscada.category=req.body.category;
-        categoryBuscada.price=req.body.price;
-        categoryBuscada.description=req.body.description;
         categoryBuscada.name=req.body.name;
-        categoryBuscada.url=req.body.url;
 
         categoryBuscada.save(function(err,resultadoUpdate){
             if (err) callback({codigo:2,texto:err.message});
@@ -43,13 +39,13 @@ exports.deleteCategory=function(req,callback){
 exports.findByIdCategory=function(req,callback){
     productCategory.findById(req.params.id,function(err,categoryBuscada){
         if (err) callback({codigo:2,texto:err.message});
-        callback({estado:{codigo:1,respuesta:"Proceso exitoso"},product:categoryBuscada});
+        callback(categoryBuscada);
     });
 };
 //listar todos los product del contenedor
 exports.findAllProduct=function(req,callback){
     productCategory.find({},function(err,categoriesBuscadas){
         if (err) callback({codigo:2,texto:err.message});
-        callback({estado:{codigo:1,respuesta:"Proceso exitoso"},product:categoriesBuscadas});
+        callback(categoriesBuscadas);
     });
 };
