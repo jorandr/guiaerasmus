@@ -8,6 +8,7 @@ var categoryModel=mongoose.model("Category");
 exports.addCategory=function(req,callback){
     var objCategory=new categoryModel();
     objCategory.name=req.body.name;
+    objCategory.url=req.body.url;
     objCategory.save(function(err,retorno){
         if (err) callback({codigo:2,texto:err.message});
         callback({estado:{codigo:1,respuesta:"Proceso exitoso"},category:retorno});
@@ -18,7 +19,7 @@ exports.addCategory=function(req,callback){
 exports.updateCategory=function(req,callback){
     objCategory.findById(req.params.id,function(err,categoryBuscada){
         categoryBuscada.name=req.body.name;
-
+        categoryBuscada.url=req.body.url;
         categoryBuscada.save(function(err,resultadoUpdate){
             if (err) callback({codigo:2,texto:err.message});
             callback({estado:{codigo:1,respuesta:"Proceso exitoso"},product:resultadoUpdate});
