@@ -136,7 +136,7 @@ router.get('/API/place/findAllPlace',function(req,res){
 
 //buscar producto
 router.get('/API/place/findPlace/:id',function(req,res){
-    controladorProduct.findByIdPlace(req,function(data){
+    placeControlador.findByIdPlace(req,function(data){
         res.send(data);
     });
 })
