@@ -8,7 +8,7 @@ var placeSchema=new Schema({
     description:String,
     urlphoto:String,
     urlmaps:String,
-    qualityprice:Number}
+    qualityprice:Number
 });
 
 module.exports=mongoose.model("Place",placeSchema);
