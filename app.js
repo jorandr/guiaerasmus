@@ -24,6 +24,7 @@ mongoose.connect('mongodb+srv://jorandr:YK7LIFkh@cluster0.uyodojk.mongodb.net/?r
 //definir enrutamiento de solicitudes
 var controladorProduct=require('./controladores/productControlador')
 var categoryControlador=require('./controladores/categoryControlador')
+var placeControlador=require('./controladores/placeControlador')
 var router=express.Router();
 
 router.get('/',function(req,res){
@@ -99,6 +100,43 @@ router.get('/API/category/findAllCategory',function(req,res){
 //buscar categoria
 router.get('/API/category/findCategory/:id',function(req,res){
     categoryControlador.findByIdCategory(req,function(data){
+        res.send(data);
+    });
+})
+
+///PLACE/////
+//agregar place
+router.post('/API/place/addPlace',function(req,res){
+    placeControlador.addPlace(req,function(data){
+        res.send(data);
+    });
+});
+
+//actualizar producto
+router.post('/API/place/updatePlace/:id',function(req,res){
+    placeControlador.updatePlace(req,function(data){
+        res.send(data);
+    });
+});
+
+
+//eliminar producto
+router.delete('/API/place/deletePlace/:id',function(req,res){
+    placeControlador.deletePlace(req,function(data){
+        res.send(data);
+    });
+});
+
+//todos los productos
+router.get('/API/place/findAllPlace',function(req,res){
+    placeControlador.findAllPlace(req,function(data){
+        res.send(data);
+    });
+})
+
+//buscar producto
+router.get('/API/place/findPlace/:id',function(req,res){
+    controladorProduct.findByIdPlace(req,function(data){
         res.send(data);
     });
 })
