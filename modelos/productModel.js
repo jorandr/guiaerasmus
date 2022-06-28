@@ -7,7 +7,7 @@ var productSchema=new Schema({
     description:String,
     name:String,
     url:String,
-    market:String
+    market:String,
     idCategory:{type:Schema.Types.ObjectId,ref:'Category'}
 });
 
