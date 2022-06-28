@@ -12,6 +12,7 @@ exports.addProduct=function(req,callback){
     objProduct.description=req.body.description;
     objProduct.name=req.body.name;
     objProduct.url=req.body.url;
+    objProduct.market=req.body.market;
     objProduct.save(function(err,retorno){
         if (err) callback({codigo:2,texto:err.message});
         callback({product:retorno});
@@ -26,6 +27,7 @@ exports.updateProduct=function(req,callback){
         productBuscado.description=req.body.description;
         productBuscado.name=req.body.name;
         productBuscado.url=req.body.url;
+        objProduct.market=req.body.market;
 
         productBuscado.save(function(err,resultadoUpdate){
             if (err) callback({codigo:2,texto:err.message});
